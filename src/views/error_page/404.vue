@@ -1,12 +1,13 @@
 <template>
   <div>
-    <el-button type="primary">默认按钮</el-button>
+    <h1>404</h1>
   </div>
 </template>
+
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 export default defineComponent({
-  name: 'Home',
-  components: {},
+  setup() {},
 })
 </script>

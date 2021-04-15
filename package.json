@@ -2,23 +2,30 @@
   "name": "gateway_ui",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite preview",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "dev": "vite"
   },
   "dependencies": {
+    "element-plus": "^1.0.2-beta.28",
+    "nprogress": "^0.2.0",
     "vue": "^3.0.5",
     "vue-router": "^4.0.6"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
+    "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.5",
+    "babel-plugin-component": "^1.1.1",
     "dotenv": "^8.2.0",
     "sass": "^1.32.8",
+    "sass-loader": "^10.0.4",
     "typescript": "^4.1.3",
     "vite": "^2.1.5",
+    "vite-plugin-style-import": "^0.9.2",
+    "vue-cli-plugin-element-plus": "~0.0.13",
     "vue-tsc": "^0.0.15"
   }
 }

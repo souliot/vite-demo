@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { loadEnv } from './build/utils'
 import { resolve } from 'path'
+import styleImport from 'vite-plugin-style-import'
 
 const viteEnv = loadEnv()
 const { VITE_PORT, VITE_PUBLIC_PATH } = viteEnv
@@ -9,7 +10,24 @@ const { VITE_PORT, VITE_PUBLIC_PATH } = viteEnv
 // https://vitejs.dev/config/
 export default defineConfig({
   base: VITE_PUBLIC_PATH,
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    styleImport({
+      libs: [
+        {
+          libraryName: 'element-plus',
+          esModule: true,
+          ensureStyleFile: true,
+          resolveStyle: (name) => {
+            return `element-plus/lib/theme-chalk/${name}.css`
+          },
+          resolveComponent: (name) => {
+            return `element-plus/lib/${name}`
+          },
+        },
+      ],
+    }),
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
