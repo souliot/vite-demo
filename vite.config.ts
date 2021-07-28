@@ -25,6 +25,12 @@ export default defineConfig({
             return `element-plus/lib/${name}`
           },
         },
+        {
+          libraryName: 'vxe-table',
+          esModule: true,
+          resolveComponent: (name) => `vxe-table/es/${name}`,
+          resolveStyle: (name) => `vxe-table/es/${name}/style.css`,
+        },
       ],
     }),
   ],
@@ -48,6 +54,7 @@ export default defineConfig({
   server: {
     open: false,
     cors: true,
+    host: '0.0.0.0',
     port: VITE_PORT,
     proxy: {
       '/api': {
